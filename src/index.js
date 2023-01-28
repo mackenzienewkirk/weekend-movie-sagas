@@ -20,6 +20,7 @@ function* rootSaga() {
 function* getMovieDetails() {
     const movies = yield axios.get('/api/movie');
     yield put({ type: 'SET_DETAILS', payload: movies.data });
+
 }
 
 function* fetchAllMovies() {

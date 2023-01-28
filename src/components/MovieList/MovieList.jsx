@@ -1,15 +1,27 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import './MovieList.css'
 
 function MovieList() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const movies = useSelector(store => store.movies);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
+
+    const captureDetails= (movie) =>{
+        console.log('The selected movie was', movie)
+        //collects info from movie and stores locally
+        
+        dispatch({ type: 'SET_DETAILS', payload: movie })
+        //navigates to details page
+        history.push(`/details`);
+    }
+
 
     return (
         <main>
@@ -17,9 +29,14 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
+                        <div 
+                        className= "card"
+                        key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
+                            <img 
+                            src={movie.poster} 
+                            alt={movie.title}
+                            onClick={ () => captureDetails(movie)}/>
                         </div>
                     );
                 })}
