@@ -15,11 +15,8 @@ function MovieList() {
 
     const captureDetails= (movie) =>{
         console.log('The selected movie was', movie)
-        //collects info from movie and stores locally
-        
-        dispatch({ type: 'SET_DETAILS', payload: movie })
         //navigates to details page
-        history.push(`/details`);
+        history.push(`/details/{$}`);
     }
 
 
