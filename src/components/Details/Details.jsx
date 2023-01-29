@@ -31,9 +31,9 @@ function Details() {
 
     return (
         <div>
-            {details.map((details) => {
+            {details.map((details, index) => {
                 return (
-                    <div>
+                    <div key={index}>
                         <img src={details.poster}/>
                         <p>{details.title}</p>
                         <p>{details.genres}</p>
