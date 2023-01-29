@@ -13,10 +13,12 @@ function Details() {
 
     useEffect(() => {
         const movieID = params.id;
+        console.log(movieID);
         dispatch({ 
             type: 'GET_MOVIE', 
-            payload: movieID });
-    }, []);
+            payload: movieID 
+        });
+    }, [params.id]);
 
     // const captureDetails = (movie) =>{
     //     console.log('The selected movie was', movie)
@@ -29,19 +31,29 @@ function Details() {
 
     return (
         <div>
-            <header>
+            {details.map((movie) => {
+                return (
+                    <div>
+                        <img src={movie.poster}/>
+                        <p>{movie.description}</p>
+                    </div>
+                )
+            })}
+
+            <div>
             <button className='back'
                     onClick={ () => history.push('/')}
                     >Back</button>
-            </header>
-            <div key = {details.id}>
-                <p>{details.title}</p>
-                <img src ={details.poster}/>
             </div>
         </div>
     )
 
-
 }
+
+
+{/* <div key = {details.id}>
+                <p>{details.title}</p>
+                <img src ={details.poster}/>
+            </div> */}
 
 export default Details;

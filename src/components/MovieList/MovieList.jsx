@@ -16,7 +16,7 @@ function MovieList() {
     const captureDetails= (movie) =>{
         console.log('The selected movie was', movie)
         //navigates to details page
-        history.push(`/details/{$}`);
+        history.push(`/details/${movie.id}`);
     }
 
 
