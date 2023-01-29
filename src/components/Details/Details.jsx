@@ -31,11 +31,14 @@ function Details() {
 
     return (
         <div>
-            {details.map((movie) => {
+            {details.map((details) => {
                 return (
                     <div>
-                        <img src={movie.poster}/>
-                        <p>{movie.description}</p>
+                        <img src={details.poster}/>
+                        <p>{details.title}</p>
+                        <p>{details.genres}</p>
+                        <p>{details.description}</p>
+
                     </div>
                 )
             })}

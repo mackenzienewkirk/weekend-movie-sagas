@@ -30,7 +30,7 @@ function* fetchMovieDetails(action) {
     try {
         const response = yield axios({
             method: 'GET',
-            url: `api/movie/${action.payload}`,
+            url: `/api/movie/${action.payload}`,
         })
         yield put ({
             type: 'SET_DETAILS',
