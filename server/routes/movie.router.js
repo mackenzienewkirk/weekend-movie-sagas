@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
 
 });
 
+//router to get the specific movie details in the database, SQL to join tables and get the title, description, and image
 router.get('/:id', (req, res) => {
   const queryText = `SELECT
               "movies"."title",

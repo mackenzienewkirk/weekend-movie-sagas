@@ -14,21 +14,14 @@ function Details() {
     useEffect(() => {
         const movieID = params.id;
         console.log(movieID);
+        //dispatch to get the specific movieID's details
         dispatch({ 
             type: 'GET_MOVIE', 
             payload: movieID 
         });
     }, [params.id]);
 
-    // const captureDetails = (movie) =>{
-    //     console.log('The selected movie was', movie)
-    //     //collects info from movie and stores locally
-        
-    //     dispatch({ type: 'SET_DETAILS', payload: movie })
-        
-    // }
-
-
+//details rendered to show the description and genre of the selected movie
     return (
         <div>
             {details.map((details, index) => {
@@ -42,7 +35,6 @@ function Details() {
                     </div>
                 )
             })}
-
             <div>
             <button className='back'
                     onClick={ () => history.push('/')}
@@ -52,11 +44,7 @@ function Details() {
     )
 
 }
+//Back button to push you back to the main page
 
-
-{/* <div key = {details.id}>
-                <p>{details.title}</p>
-                <img src ={details.poster}/>
-            </div> */}
 
 export default Details;
