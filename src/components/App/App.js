@@ -6,7 +6,9 @@ import Details from '../Details/Details';
 function App() {
   return (
     <div className="App">
+      <div className='title'>
       <h1>The Movie Gallery!</h1>
+      </div>
       <Router>        
         <Route path="/" exact>
           <MovieList />
