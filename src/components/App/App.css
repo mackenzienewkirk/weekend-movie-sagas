@@ -27,6 +27,8 @@
 
 .title {
   background-color: cornflowerblue;
+  border-radius: 20px;
+  height: 45px;
 }
 
 @keyframes App-logo-spin {
